@@ -1,0 +1,308 @@
+/* ==========================================================================
+   OFFICE INFO CONTROLLER - ENTERPRISE STYLES
+   Color Palette:
+     - Dark Navy Base: #0B192C
+     - Primary Royal Blue: #0066FF
+     - Surface Light: #F4F7FE
+     - Surface Dark: #060D1A
+     - Success / Verified: #10B981
+     - Error / Non-Compliant: #EF4444
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --navy-base: #0B192C;
+  --royal-blue: #0066FF;
+  --royal-blue-glow: rgba(0, 102, 255, 0.35);
+  --surface-light: #F4F7FE;
+  --surface-dark: #060D1A;
+  --card-dark: #0F1F38;
+  --card-dark-border: rgba(255, 255, 255, 0.08);
+  --emerald-green: #10B981;
+  --emerald-glow: rgba(16, 185, 129, 0.35);
+  --crimson-red: #EF4444;
+  --crimson-glow: rgba(239, 68, 68, 0.35);
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  user-select: text;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Glassmorphism Styles */
+.glass-panel-dark {
+  background: rgba(11, 25, 44, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 102, 255, 0.12);
+  box-shadow: 0 15px 35px -10px rgba(0, 102, 255, 0.08), 0 0 1px 1px rgba(255, 255, 255, 0.8) inset;
+}
+
+.glass-card-dark {
+  background: rgba(15, 31, 56, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-card-light {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 102, 255, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Gradient accents */
+.bg-gradient-royal {
+  background: linear-gradient(135deg, #0066FF 0%, #0045B5 100%);
+}
+
+.bg-gradient-mesh {
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(0, 102, 255, 0.15) 0px, transparent 50%),
+    radial-gradient(at 90% 10%, rgba(16, 185, 129, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 80%, rgba(11, 25, 44, 0.25) 0px, transparent 50%);
+}
+
+/* Animated Grid Background */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 102, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 102, 255, 0.06) 1px, transparent 1px);
+}
+
+/* Forensic Watermark Overlay */
+.forensic-watermark-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 50;
+  overflow: hidden;
+  opacity: 0.22;
+  user-select: none;
+  mix-blend-mode: difference;
+}
+
+.forensic-watermark-text {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ff3333;
+  transform: rotate(-25deg);
+  white-space: nowrap;
+  letter-spacing: 2px;
+  text-shadow: 0 0 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Laser scan animation */
+@keyframes laserScan {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 96%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.animate-laser {
+  animation: laserScan 2.4s ease-in-out infinite;
+}
+
+/* Pulse Glows */
+.glow-blue {
+  box-shadow: 0 0 25px var(--royal-blue-glow);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 30px var(--emerald-glow);
+}
+
+.glow-crimson {
+  box-shadow: 0 0 30px var(--crimson-glow);
+}
+
+/* Custom Slide Transitions */
+.slide-in-right {
+  animation: slideInRight 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-in-up {
+  animation: slideInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.shake-animation {
+  animation: shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* OTP Input Boxes */
+.otp-box {
+  width: 48px;
+  height: 56px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 102, 255, 0.25);
+  background: rgba(11, 25, 44, 0.6);
+  color: #ffffff;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.light .otp-box {
+  background: #ffffff;
+  color: #0B192C;
+  border-color: #cbd5e1;
+}
+
+.otp-box:focus {
+  border-color: #0066FF;
+  box-shadow: 0 0 15px rgba(0, 102, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(11, 25, 44, 0.3);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 102, 255, 0.4);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 102, 255, 0.7);
+}
+
+/* Sandboxed Viewer Anti-Select */
+.unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* SOC Live Radar Beacon */
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.radar-beacon {
+  animation: radarPulse 2s infinite;
+}
+
+/* Metric Card Hover */
+.soc-stat-card {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.soc-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 102, 255, 0.4);
+}
+
+/* Ticker Glow */
+.log-row-enter {
+  animation: logEnter 0.35s ease-out forwards;
+}
+
+@keyframes logEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+    background-color: rgba(0, 102, 255, 0.2);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    background-color: transparent;
+  }
+}
+
+/* Anti-Exfiltration Print Blocker */
+@media print {
+  body, #app-root {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
+
+/* Viewer Focus Loss / Tab Blur Protection */
+.tab-blurred {
+  filter: blur(14px) grayscale(90%) !important;
+  pointer-events: none !important;
+  user-select: none !important;
+}
+
+/* Password strength bars */
+.pwd-bar {
+  height: 4px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
